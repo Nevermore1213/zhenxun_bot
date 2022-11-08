@@ -33,8 +33,6 @@ weather = on_regex(r".{0,10}?(.*)的?天气.{0,10}", priority=5, block=True)
 @weather.handle()
 async def _(event: MessageEvent, reg_group: Tuple[Any, ...] = RegexGroup()):
     msg = reg_group[0]
-    if msg and msg[-1] != "市":
-        msg += "市"
     city = ""
     if msg:
         city_list = get_city_list()
@@ -56,3 +54,4 @@ async def _(event: MessageEvent, reg_group: Tuple[Any, ...] = RegexGroup()):
             f"查询天气:" + city
         )
         await weather.finish(city_weather)
+#TODO  天气预测和实际天气情况分开一下，尝试一下合并分发消息，增加定时任务

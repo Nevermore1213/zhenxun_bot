@@ -59,7 +59,7 @@ switch_rule_matcher = on_message(rule=switch_rule, priority=4, block=True)
 
 plugins_status = on_command("功能状态", permission=SUPERUSER, priority=5, block=True)
 
-group_task_status = on_command("群被动状态", permission=GROUP, priority=5, block=True)
+group_task_status = on_command("群被动状态/群被动功能", permission=GROUP, priority=5, block=True)
 
 group_status = on_regex("^(休息吧|醒来)$", permission=GROUP, priority=5, block=True)
 

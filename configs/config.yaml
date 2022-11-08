@@ -24,6 +24,7 @@ _task:
   # DEFAULT_BILIBILI_PARSE: 被动 B站转发解析 进群默认开关状态
   # DEFAULT_OPEN_CASE_RESET_REMIND: 被动 每日开箱重置提醒 进群默认开关状态
   # DEFAULT_EPIC_FREE_GAME: 被动 epic免费游戏 进群默认开关状态
+  # DEFAULT_ZAOBAO: 被动 早报 进群默认开关状态
   DEFAULT_ZWA: true
   DEFAULT_GROUP_WELCOME: true
   DEFAULT_REFUND_GROUP_REMIND: true
@@ -34,6 +35,7 @@ _task:
   DEFAULT_BILIBILI_PARSE: true
   DEFAULT_OPEN_CASE_RESET_REMIND: true
   DEFAULT_EPIC_FREE_GAME: true
+  DEFAULT_ZAOBAO: true
 _backup:
   # 文件备份
   # BACKUP_FLAG: 是否开启文件备份
@@ -53,7 +55,7 @@ invite_manager:
   # WELCOME_MSG_CD: 群欢迎消息cd
   # AUTO_ADD_FRIEND: 是否自动同意好友添加
   MESSAGE: 请不要未经同意就拉小真寻入群！告辞！
-  FLAG: true
+  FLAG: false
   WELCOME_MSG_CD: 5
   AUTO_ADD_FRIEND: false
 shop:
@@ -213,7 +215,7 @@ reload_setting:
   AUTO_RELOAD: false
   AUTO_RELOAD_TIME: 180
 open_cases:
-  # 开箱
+  # open_cases
   # INITIAL_OPEN_CASE_COUNT: 初始每日开箱次数
   # EACH_IMPRESSION_ADD_COUNT: 每 * 点好感度额外增加开箱次数
   # COOKIE: BUFF的cookie
@@ -283,7 +285,7 @@ send_setu:
   ALLOW_GROUP_R18: false
   MAX_ONCE_NUM2FORWARD:
 resin_remind:
-  # 原神树脂提醒
+  # resin_remind
   # AUTO_CLOSE_QUERY_FAIL_RESIN_REMIND: 当请求连续三次失败时，关闭用户的树脂提醒
   # CUSTOM_RESIN_OVERFLOW_REMIND: 自定义树脂溢出指定数量时的提醒，空值是为关闭
   AUTO_CLOSE_QUERY_FAIL_RESIN_REMIND: true
@@ -350,3 +352,15 @@ ai:
   TEXT_FILTER:
   - 鸡
   - 口交
+github_sub:
+  # github订阅
+  # GHP_FYZHJNU1ZUPAGWDEVATGJOMFLK8WV61U69KX: 登陆github获取https://github.com/settings/tokens/new
+  # GITHUB_ISSUE: 是否不推送Issue
+  # GROUP_GITHUB_SUB_LEVEL: 群内github订阅需要管理的权限
+  GHP_FYZHJNU1ZUPAGWDEVATGJOMFLK8WV61U69KX:
+  GITHUB_ISSUE: true
+  GROUP_GITHUB_SUB_LEVEL: 5
+wolframalpha:
+  # wolframalpha
+  # WOLFRAMALPHA_APPID: wolframalpha_APPID,请前往https://developer.wolframalpha.com/获取
+  WOLFRAMALPHA_APPID: Y4K6WU-RQ6UJAV5QW

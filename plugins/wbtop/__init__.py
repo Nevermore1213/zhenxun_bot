@@ -78,3 +78,5 @@ async def _(event: MessageEvent, arg: Message = CommandArg()):
         else:
             await wbtop.finish("发生了一些错误.....")
 
+
+#TODO 解决微博爬取数据的问题，学习playwright

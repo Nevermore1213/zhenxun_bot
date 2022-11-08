@@ -1,4 +1,4 @@
 import nonebot
 
-nonebot.load_plugins("plugins/genshin")
+# nonebot.load_plugins("plugins/genshin")
 
