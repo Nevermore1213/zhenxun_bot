@@ -11,7 +11,6 @@ import json
 
 driver: Driver = nonebot.get_driver()
 
-#china_city = TEXT_PATH / "china_city.json"
 china_city = TEXT_PATH / "China_cities.json"
 
 data = {}

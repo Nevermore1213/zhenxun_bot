@@ -5,7 +5,10 @@ from jieba import posseg
 from services.log import logger
 from nonebot.params import RegexGroup
 from typing import Tuple, Any
-
+from configs.config import Config
+from utils.utils import scheduler, get_bot
+from utils.manager import group_manager
+from .data_source import *
 
 __zx_plugin_name__ = "天气查询"
 __plugin_usage__ = """
@@ -25,6 +28,14 @@ __plugin_settings__ = {
     "limit_superuser": False,
     "cmd": ["查询天气", "天气", "天气查询", "查天气"],
 }
+__plugin_task__ = {"weather": "近期天气预报"}
+Config.add_plugin_config(
+    "_task",
+    "DEFAULT_WeatherPrediction",
+    True,
+    help_="被动 天气预报 进群默认开关状态",
+    default_value=True,
+)
 
 
 weather = on_regex(r".{0,10}?(.*)的?天气.{0,10}", priority=5, block=True)
@@ -54,4 +65,25 @@ async def _(event: MessageEvent, reg_group: Tuple[Any, ...] = RegexGroup()):
             f"查询天气:" + city
         )
         await weather.finish(city_weather)
-#TODO  天气预测和实际天气情况分开一下，尝试一下合并分发消息，增加定时任务
+#TODO  天气预测和实际天气情况分开一下，尝试一下合并分发消息，增加定时任务（需求不合理，群友来自各地如果发送到群里的话没有意义，还是默认发给超级用户吧）
+
+# @scheduler.scheduled_job(
+#     "cron",
+#     hour=7,
+#     minute=30,
+# )
+# async def _():
+#     bot = get_bot()
+#     gl = await bot.get_group_list()
+#     gl = [g["group_id"] for g in gl]
+#     bot.send_group_msg(group_id=,message=)
+#     msg = await
+#     for g in gl:
+#         if await group_manager.check_group_task_status(g, "weather"):
+#             try:
+#                 if msg and code == 200:
+#                     await bot.send_group_forward_msg(group_id=g, messages=msg_list)
+#                 else:
+#                     await bot.send_group_msg(group_id=g)
+#             except Exception as e:
+#                 logger.error(f"早报获取错误")

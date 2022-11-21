@@ -25,6 +25,8 @@ _task:
   # DEFAULT_OPEN_CASE_RESET_REMIND: 被动 每日开箱重置提醒 进群默认开关状态
   # DEFAULT_EPIC_FREE_GAME: 被动 epic免费游戏 进群默认开关状态
   # DEFAULT_ZAOBAO: 被动 早报 进群默认开关状态
+  # DEFAULT_WEATHERPREDICTION: 被动 天气预报 进群默认开关状态
+  # DEFAULT_LIBRARYBOOKING: 被动 图书馆预约 进群默认开关状态
   DEFAULT_ZWA: true
   DEFAULT_GROUP_WELCOME: true
   DEFAULT_REFUND_GROUP_REMIND: true
@@ -36,6 +38,8 @@ _task:
   DEFAULT_OPEN_CASE_RESET_REMIND: true
   DEFAULT_EPIC_FREE_GAME: true
   DEFAULT_ZAOBAO: true
+  DEFAULT_WEATHERPREDICTION: true
+  DEFAULT_LIBRARYBOOKING: true
 _backup:
   # 文件备份
   # BACKUP_FLAG: 是否开启文件备份
